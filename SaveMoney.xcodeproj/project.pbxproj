@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1299BFE72B727E1C000D9015 /* SaveMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299BFE62B727E1C000D9015 /* SaveMoneyApp.swift */; };
-		1299BFE92B727E1C000D9015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299BFE82B727E1C000D9015 /* ContentView.swift */; };
+		1299BFE92B727E1C000D9015 /* TransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299BFE82B727E1C000D9015 /* TransactionScreen.swift */; };
 		1299BFEB2B727E1D000D9015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1299BFEA2B727E1D000D9015 /* Assets.xcassets */; };
 		1299BFEF2B727E1D000D9015 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1299BFEE2B727E1D000D9015 /* Preview Assets.xcassets */; };
 		1299BFF92B727E1D000D9015 /* SaveMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299BFF82B727E1D000D9015 /* SaveMoneyTests.swift */; };
 		1299C0032B727E1D000D9015 /* SaveMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C0022B727E1D000D9015 /* SaveMoneyUITests.swift */; };
 		1299C0052B727E1D000D9015 /* SaveMoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C0042B727E1D000D9015 /* SaveMoneyUITestsLaunchTests.swift */; };
+		1299C0162B729E58000D9015 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C0152B729E58000D9015 /* Transaction.swift */; };
+		1299C0182B72AFB1000D9015 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C0172B72AFB1000D9015 /* HapticsManager.swift */; };
+		1299C01A2B72B19D000D9015 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C0192B72B19D000D9015 /* AddTransactionView.swift */; };
+		1299C01C2B72B6BC000D9015 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C01B2B72B6BC000D9015 /* Common.swift */; };
+		1299C01E2B72F739000D9015 /* EditTransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C01D2B72F739000D9015 /* EditTransactionScreen.swift */; };
+		1299C0202B72F75A000D9015 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299C01F2B72F75A000D9015 /* TransactionCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,7 @@
 /* Begin PBXFileReference section */
 		1299BFE32B727E1C000D9015 /* SaveMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1299BFE62B727E1C000D9015 /* SaveMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMoneyApp.swift; sourceTree = "<group>"; };
-		1299BFE82B727E1C000D9015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1299BFE82B727E1C000D9015 /* TransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionScreen.swift; sourceTree = "<group>"; };
 		1299BFEA2B727E1D000D9015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1299BFEC2B727E1D000D9015 /* SaveMoney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveMoney.entitlements; sourceTree = "<group>"; };
 		1299BFEE2B727E1D000D9015 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +51,12 @@
 		1299BFFE2B727E1D000D9015 /* SaveMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1299C0022B727E1D000D9015 /* SaveMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMoneyUITests.swift; sourceTree = "<group>"; };
 		1299C0042B727E1D000D9015 /* SaveMoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1299C0152B729E58000D9015 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1299C0172B72AFB1000D9015 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		1299C0192B72B19D000D9015 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		1299C01B2B72B6BC000D9015 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		1299C01D2B72F739000D9015 /* EditTransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionScreen.swift; sourceTree = "<group>"; };
+		1299C01F2B72F75A000D9015 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +107,10 @@
 		1299BFE52B727E1C000D9015 /* SaveMoney */ = {
 			isa = PBXGroup;
 			children = (
-				1299BFE62B727E1C000D9015 /* SaveMoneyApp.swift */,
-				1299BFE82B727E1C000D9015 /* ContentView.swift */,
+				1299C0142B7285A1000D9015 /* SupportFiles */,
+				1299C0132B728598000D9015 /* Views */,
+				1299C0122B72858E000D9015 /* Screens */,
+				1299C0112B728585000D9015 /* Models */,
 				1299BFEA2B727E1D000D9015 /* Assets.xcassets */,
 				1299BFEC2B727E1D000D9015 /* SaveMoney.entitlements */,
 				1299BFED2B727E1D000D9015 /* Preview Content */,
@@ -127,6 +141,42 @@
 				1299C0042B727E1D000D9015 /* SaveMoneyUITestsLaunchTests.swift */,
 			);
 			path = SaveMoneyUITests;
+			sourceTree = "<group>";
+		};
+		1299C0112B728585000D9015 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1299BFE62B727E1C000D9015 /* SaveMoneyApp.swift */,
+				1299C0152B729E58000D9015 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1299C0122B72858E000D9015 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1299BFE82B727E1C000D9015 /* TransactionScreen.swift */,
+				1299C01D2B72F739000D9015 /* EditTransactionScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1299C0132B728598000D9015 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1299C0192B72B19D000D9015 /* AddTransactionView.swift */,
+				1299C01F2B72F75A000D9015 /* TransactionCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1299C0142B7285A1000D9015 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1299C0172B72AFB1000D9015 /* HapticsManager.swift */,
+				1299C01B2B72B6BC000D9015 /* Common.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1299BFE92B727E1C000D9015 /* ContentView.swift in Sources */,
+				1299BFE92B727E1C000D9015 /* TransactionScreen.swift in Sources */,
 				1299BFE72B727E1C000D9015 /* SaveMoneyApp.swift in Sources */,
+				1299C0182B72AFB1000D9015 /* HapticsManager.swift in Sources */,
+				1299C0162B729E58000D9015 /* Transaction.swift in Sources */,
+				1299C01E2B72F739000D9015 /* EditTransactionScreen.swift in Sources */,
+				1299C01C2B72B6BC000D9015 /* Common.swift in Sources */,
+				1299C01A2B72B19D000D9015 /* AddTransactionView.swift in Sources */,
+				1299C0202B72F75A000D9015 /* TransactionCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
