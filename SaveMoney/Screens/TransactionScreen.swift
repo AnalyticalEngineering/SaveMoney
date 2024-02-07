@@ -15,13 +15,13 @@ struct TransactionScreen: View {
     //MARK:  PROPERTIES
     @Environment(\.modelContext) private var context
     @State private var addNewTransaction: Bool = false
-    @Query(sort: \Transaction.title) private var transactions: [Transaction]
-    
+    @Query(sort: \Transaction.budget) private var transactions: [Transaction]
+
     
     
     var body: some View {
         NavigationStack {
-          
+           
                 List{
                     if transactions.isEmpty{
                         ContentUnavailableView("Press '+' to enter a transaction.",  systemImage: "building.columns.circle").foregroundStyle(.blue).padding()
@@ -41,6 +41,7 @@ struct TransactionScreen: View {
                             }
                         })
                     }
+                       
                 }
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading){
@@ -48,7 +49,8 @@ struct TransactionScreen: View {
                                 HapticManager.notification(type: .success)
                             }, label: {
                                 Image(systemName: "line.3.horizontal.circle.fill")
-                                    .imageScale(.large)
+                                    .resizable()
+                                    .frame(width: 35, height: 35)
                             })
                         }
                         ToolbarItem(placement: .topBarTrailing){
@@ -57,12 +59,13 @@ struct TransactionScreen: View {
                                 HapticManager.notification(type: .success)
                             }, label: {
                                 Image(systemName: "plus.circle.fill")
-                                    .imageScale(.large)
+                                    .resizable()
+                                    .frame(width: 35, height: 35)
                             })
                         }
                     }///endOfToolbar
                     .sheet(isPresented: $addNewTransaction) {
-                        AddTransactionView()
+                        AddTransactionView(transaction: Transaction())
                             .presentationDetents([.medium])
                     }
                     .navigationTitle("Transactions")
@@ -71,7 +74,3 @@ struct TransactionScreen: View {
         }
     
 
-#Preview {
-    TransactionScreen()
-        .modelContainer(for: Transaction.self, inMemory: true)
-}

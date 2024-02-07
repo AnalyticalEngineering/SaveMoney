@@ -15,11 +15,11 @@ struct TransactionCardView: View {
             HStack(spacing: 4) {
                 transaction.icon
                     .resizable()
-                    .frame(width: 45, height: 45)
+                    .frame(width: 55, height: 55)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .background(.blue.gradient, in: .circle)
-                
+                    .padding(.trailing,10)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(transaction.title)
                         .font(.headline)

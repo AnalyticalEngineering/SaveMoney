@@ -15,7 +15,7 @@ class Transaction {
     var subTitle: String
     var amount: Double
     var dateAdded: Date
-    var budget: Budget
+    var budget: Budget.RawValue 
     
     init(
         title: String = "",
@@ -28,11 +28,11 @@ class Transaction {
         self.subTitle = subTitle
         self.amount = amount
         self.dateAdded = dateAdded
-        self.budget = budget
+        self.budget = budget.rawValue
     }
     
     var icon: Image {
-        switch budget {
+        switch Budget(rawValue: budget)! {
         case .Mortgage:
            Image(systemName: "house.circle")
         case .Rent:
@@ -99,6 +99,7 @@ class Transaction {
             Image(systemName: "c.circle")
         case .Debt:
             Image(systemName: "building.columns.circle")
+       
         }
     }
 }

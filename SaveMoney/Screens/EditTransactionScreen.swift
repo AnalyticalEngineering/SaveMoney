@@ -17,9 +17,10 @@ struct EditTransactionScreen: View {
     @State private var amount: Double = .zero
     @State private var dateAdded = Date.now
     
+    
     init(transaction: Transaction) {
         self.transaction = transaction
-        _budget = State(initialValue: Budget(rawValue: transaction.budget.rawValue)!)
+        _budget = State(initialValue: Budget(rawValue: transaction.budget)!)
     }
     var body: some View {
         NavigationStack{
@@ -36,7 +37,6 @@ struct EditTransactionScreen: View {
                     }.pickerStyle(.menu)
                         .buttonStyle(.borderedProminent)
                 }
-                VStack(alignment: .leading, content: {
                     GroupBox {
                         LabeledContent {
                             DatePicker("", selection: $dateAdded, displayedComponents: .date)
@@ -50,11 +50,13 @@ struct EditTransactionScreen: View {
                     Divider()
                     Section("Transaction Name and Description") {
                         TextField("Best Buy", text: $title)
+                            .foregroundStyle(.secondary)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
                         TextField("iPhone 16 Pro Max Upgrade", text: $subTitle)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
+                            .foregroundStyle(.secondary)
                     }
                     .padding(.horizontal)
                     Divider()
@@ -65,13 +67,14 @@ struct EditTransactionScreen: View {
                                 TextField("Amount", value: $amount, formatter: numberFormatter)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .keyboardType(.decimalPad)
+                                    .foregroundStyle(.secondary)
                             }
                         }
                     }
                     .padding(.horizontal)
                     Divider()
-                })
             }
+            .navigationTitle("Edit Transaction")
             .padding(.top, 10)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 5))
             Spacer()
@@ -79,7 +82,7 @@ struct EditTransactionScreen: View {
                     ToolbarItem(placement: .topBarTrailing){
                         if changed {
                             Button {
-                                transaction.budget = budget
+                                transaction.budget = budget.rawValue
                                 transaction.title = title
                                 transaction.subTitle = subTitle
                                 transaction.dateAdded = dateAdded
@@ -95,7 +98,6 @@ struct EditTransactionScreen: View {
                     }
                 }
                 .onAppear{
-                    budget = transaction.budget
                     title = transaction.title
                     subTitle = transaction.subTitle
                     dateAdded = transaction.dateAdded
@@ -104,12 +106,10 @@ struct EditTransactionScreen: View {
         }
     }
     var changed: Bool {
-        budget != Budget(rawValue: transaction.budget.rawValue)!
-       
+        budget != Budget(rawValue: transaction.budget)!
         || title != transaction.title
         || subTitle != transaction.subTitle
         || dateAdded != transaction.dateAdded
-        || budget != transaction.budget
         || amount != transaction.amount
     }
 }

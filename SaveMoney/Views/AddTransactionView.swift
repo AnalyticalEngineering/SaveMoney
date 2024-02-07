@@ -15,9 +15,10 @@ struct AddTransactionView: View {
     @State private var subTitle = ""
     @State private var amount: Double = 0
     @State private var dateAdded: Date = .now
-    @State private var budget: Budget = .Rent
-    
-    
+    @State private var budget: Budget
+    init(transaction: Transaction) {
+        _budget = State(initialValue: Budget(rawValue: transaction.budget)!)
+    }
     var body: some View {
         NavigationStack {
             VStack{
@@ -33,13 +34,13 @@ struct AddTransactionView: View {
                         }
                     }.pickerStyle(.menu)
                         .buttonStyle(.borderedProminent)
-                }.padding(.top,15)
-                VStack(alignment: .leading, content: {
+                }.padding(.top,25)
+               
                     GroupBox {
                         LabeledContent {
                             DatePicker("", selection: $dateAdded, displayedComponents: .date)
                         } label: {
-                            Text("Date ")
+                            Text("Transaction Date: ")
                                 .font(.title3)
                                 .foregroundStyle(.secondary)
                                 .fontWeight(.bold)
@@ -48,9 +49,11 @@ struct AddTransactionView: View {
                     Divider()
                     Section("Transaction Name and Description") {
                         TextField("Best Buy", text: $title)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.title2)
+                            .textFieldStyle(.roundedBorder)
                             .padding(.horizontal)
                         TextField("iPhone 16 Pro Max Upgrade", text: $subTitle)
+                            .font(.title2)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
                     }
@@ -62,17 +65,17 @@ struct AddTransactionView: View {
                                 Text(currencySymbol)
                                 TextField("Amount", value: $amount, formatter: numberFormatter)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .font(.title2)
+                                    .frame(width: 140)
                                     .keyboardType(.decimalPad)
                             }
                         }
                     }
                     .padding(.horizontal)
                     Spacer()
-                })
             }
-           
-            
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
+            .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 7))
+            .padding(.horizontal)
             .navigationTitle("Add Transaction")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -82,7 +85,9 @@ struct AddTransactionView: View {
                         HapticManager.notification(type: .success)
                     }, label: {
                         Image(systemName: "x.circle.fill")
-                            .imageScale(.large)
+                            .resizable()
+                            .fontWeight(.bold)
+                            .frame(width: 35, height: 35)
                     })
                 }
                 ToolbarItem(placement: .topBarTrailing){
@@ -102,6 +107,3 @@ struct AddTransactionView: View {
     
 }
 
-#Preview {
-    AddTransactionView()
-}
